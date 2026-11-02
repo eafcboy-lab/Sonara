@@ -1,0 +1,12 @@
+{
+  "name": "SONARA — Your Music, Your World",
+  "short_name": "SONARA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b12",
+  "theme_color": "#090b12",
+  "description": "A custom music companion.",
+  "icons": [
+    {"src":"./icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

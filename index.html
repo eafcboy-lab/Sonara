@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="SONARA — your music, your world.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>SONARA</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SONARA home"><span class="brand-mark">S</span><span>SONARA</span></a>
+      <button class="avatar" aria-label="Profile">A</button>
+    </header>
+
+    <main>
+      <section class="screen active" id="home-screen">
+        <div class="greeting"><p class="eyebrow">MONDAY • YOUR SOUNDTRACK</p><h1>Find your<br><span>frequency.</span></h1><p class="sub">A space for everything you're listening to.</p></div>
+        <div class="quick-grid">
+          <button class="quick-card" data-search="Daily Mix"><span class="quick-art art-one">◒</span><b>Daily Mix</b><small>Your rotation</small></button>
+          <button class="quick-card" data-search="Chill hits"><span class="quick-art art-two">✳</span><b>Late night</b><small>Slow things down</small></button>
+          <button class="quick-card" data-search="Hip hop hits"><span class="quick-art art-three">〰</span><b>On repeat</b><small>Back again</small></button>
+          <button class="quick-card" data-search="New music"><span class="quick-art art-four">✦</span><b>Fresh finds</b><small>Something new</small></button>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Made for you</h2></div><button class="text-button" data-go="search">Explore</button></div>
+        <div class="track-list" id="home-tracks"></div>
+        <div class="promo"><span class="promo-icon">✧</span><div><b>Your music, one tap away</b><p>Search in SONARA, then open your result in YouTube Music.</p></div></div>
+      </section>
+
+      <section class="screen" id="search-screen">
+        <p class="eyebrow">DISCOVER SOMETHING</p><h1>Search</h1>
+        <form id="search-form" class="search-box"><span>⌕</span><input id="search-input" placeholder="Songs, artists, moods…" autocomplete="off"><button type="submit">Go</button></form>
+        <div class="chips"><button class="chip" data-query="Hip hop">Hip hop</button><button class="chip" data-query="R&B">R&amp;B</button><button class="chip" data-query="Afrobeats">Afrobeats</button><button class="chip" data-query="Chill">Chill</button></div>
+        <div class="section-heading"><div><p class="eyebrow">YOUR SEARCH</p><h2 id="results-title">Try a search</h2></div></div>
+        <div class="track-list" id="search-results"><div class="empty-state">Search for a track or artist. Results open through YouTube Music.</div></div>
+      </section>
+
+      <section class="screen" id="library-screen">
+        <p class="eyebrow">ALL YOUR COLLECTION</p><h1>Your library</h1>
+        <div class="library-tile"><span class="library-icon">♡</span><div><b>Liked songs</b><small>Your saved favourites</small></div><span>›</span></div>
+        <div class="library-tile"><span class="library-icon">▤</span><div><b>Playlists</b><small>Your mixes and collections</small></div><span>›</span></div>
+        <div class="library-tile"><span class="library-icon">◷</span><div><b>Recently played</b><small>Pick up where you left off</small></div><span>›</span></div>
+        <div class="notice"><b>Connect your music</b><p>SONARA currently uses YouTube Music links. A full private-library sync isn't available through Google's public APIs.</p><a href="https://music.youtube.com/" target="_blank" rel="noopener">Open YouTube Music ↗</a></div>
+      </section>
+
+      <section class="screen" id="settings-screen">
+        <p class="eyebrow">MAKE IT YOURS</p><h1>Settings</h1>
+        <div class="setting-row"><div><b>Appearance</b><small>Deep space dark</small></div><span class="setting-pill">AMOLED</span></div>
+        <div class="setting-row"><div><b>App version</b><small>SONARA preview 1.0</small></div><span>1.0</span></div>
+        <div class="notice"><b>About SONARA</b><p>An independent music companion concept. SONARA is not affiliated with Spotify or YouTube.</p></div>
+        <button class="wide-button" id="install-help">How to install on iPhone</button>
+      </section>
+    </main>
+
+    <div class="now-playing" id="now-playing">
+      <div class="mini-art">♫</div><div class="mini-info"><b id="now-title">Choose a track</b><small id="now-artist">Your next favourite is waiting</small></div>
+      <button id="open-current" class="mini-action" aria-label="Open current track in YouTube Music">↗</button>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item selected" data-screen="home-screen"><span>⌂</span><small>Home</small></button>
+      <button class="nav-item" data-screen="search-screen"><span>⌕</span><small>Search</small></button>
+      <button class="nav-item" data-screen="library-screen"><span>▤</span><small>Library</small></button>
+      <button class="nav-item" data-screen="settings-screen"><span>⚙</span><small>Settings</small></button>
+    </nav>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
